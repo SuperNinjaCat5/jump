@@ -528,7 +528,7 @@ texture = ExtResource("4_1bvp3")
 sources/0 = SubResource("TileSetAtlasSource_1bvp3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
-size = Vector2(1920, 53)
+size = Vector2(832.5, 20)
 
 [node name="Main" type="Node"]
 
@@ -568,18 +568,11 @@ tile_set = SubResource("TileSet_lquwl")
 [node name="Death_Box" type="Area2D" parent="."]
 
 [node name="Death_Box_Col" type="CollisionShape2D" parent="Death_Box"]
-position = Vector2(800, 637.5)
+position = Vector2(681, 621)
 shape = SubResource("RectangleShape2D_lquwl")
 
 [node name="Game_Over_Overlay" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("5_lquwl")
-
-[node name="Panel" type="Panel" parent="Game_Over_Overlay"]
-offset_left = 2.0
-offset_top = 1.0
-offset_right = 1150.0
-offset_bottom = 648.0
 
 [node name="Label" type="Label" parent="Game_Over_Overlay"]
 offset_top = 192.0
@@ -588,6 +581,12 @@ offset_bottom = 348.0
 theme_override_font_sizes/font_size = 100
 text = "Game Over!"
 horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Game_Over_Overlay"]
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 1150.0
+offset_bottom = 648.0
 
 [node name="Retry" type="Button" parent="Game_Over_Overlay"]
 offset_left = 496.0
