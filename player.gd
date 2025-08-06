@@ -27,10 +27,16 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
 	if direction:
+		$AnimatedSprite2D.flip_h = true if direction < 0 else false
+		$AnimatedSprite2D.play("run")
 		velocity.x = direction * SPEED
 	else:
+		$AnimatedSprite2D.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
+	if velocity.x == 0:
+		$AnimatedSprite2D.play("idle")
+	
 	var was_on_floor = is_on_floor()
 	
 	move_and_slide()
